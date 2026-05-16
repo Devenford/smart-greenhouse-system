@@ -26,21 +26,37 @@ It performs automated ventilation and allows the user to remotely configure the 
 ## Tech Stack
 
 ### Hardware / IoT
-- ESP32
-- DHT22 Sensor
-- Soil Moisture Sensor
-- Light Sensor
-- Wokwi Simulator
+| Sl. No. | Component                | Type               | Role |
+|--------|--------------------------|--------------------|------|
+| 1      | ESP32                    | Processing Unit    | Microcontroller that processes sensor data and controls actuators/LCDs |
+| 2      | DHT22 Sensor             | Sensor             | Measures temperature and humidity |
+| 3      | Servo Motor              | Actuator           | Opens/closes the greenhouse window |
+| 4      | Fan (represented by LED) | Actuator           | Provides ventilation inside the greenhouse |
+| 5      | 20x4 LCD Display (Main)  | Output Device      | Shows current temperature, humidity, window, and fan states |
+| 6      | 16x2 LCD Display (Limit) | Output Device      | Displays user-set temperature and humidity limits |
+| 7      | Breadboard               | Connector Platform | Provides easy wiring and connections between components |
+| 8      | Resistor                 | Passive Component  | Limits current to protect LED |
+| 9      | Power Supply             | Power Source       | Provides required voltage/current to ESP32, actuators, and sensors |
+
+## Circuit Diagram
+
+![Circuit Diagram](screenshots/Circuit-Diagram.png)
 
 ### Backend
 - Node.js
 - Express.js
-- MQTT
+- MQTT (HiveMQ broker)
 - MongoDB
 - Mongoose
 
-### Frontend / Dashboard
-- [Add frontend framework/app here]
+## MongoDB Collection
+
+![MongoDB Collection](screenshots/mongodb_collection.png)
+
+### Frontend (Dashboard)
+![Dashboard Output 1](screenshots/dashboard_output1.jpeg)
+
+![Dashboard Output 2](screenshots/dashboard_output2.jpeg)
 
 ### Communication
 Between the ESP32 and MQTT broker:  (MQTT over TCP with TLS, encrypted)
@@ -66,3 +82,16 @@ ESP32 Sensors
    MongoDB
       ↓
  Dashboard / Mobile App
+
+![Deployment Diagram](screenshots/Deployment-Diagram.png)
+
+## Flowchart
+
+![Flowchart](screenshots/Flowchart.png)
+
+
+## Simulation Output
+
+![Simulation 1](screenshots/simulation_output1.png)
+
+![Simulation 2](screenshots/simulation_output2.png)
