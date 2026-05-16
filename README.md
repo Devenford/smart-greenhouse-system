@@ -49,14 +49,15 @@ It performs automated ventilation and allows the user to remotely configure the 
 - MongoDB
 - Mongoose
 
-## MongoDB Collection
+### MongoDB Collection
 
 ![MongoDB Collection](screenshots/mongodb_collection.png)
 
 ### Frontend (Dashboard)
-![Dashboard Output 1](screenshots/dashboard_output1.jpeg)
-
-![Dashboard Output 2](screenshots/dashboard_output2.jpeg)
+<p align="center">
+  <img src="screenshots/dashboard_output1.jpeg" width="48%" />
+  <img src="screenshots/dashboard_output2.jpeg" width="48%" />
+</p>
 
 ### Communication
 Between the ESP32 and MQTT broker:  (MQTT over TCP with TLS, encrypted)
