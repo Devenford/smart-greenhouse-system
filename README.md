@@ -84,6 +84,7 @@ ESP32 Sensors → MQTT Broker (HiveMQ) → Node.js Backend → MongoDB → Dashb
 
 ![Flowchart](screenshots/Flowchart.png)
 
+---
 
 ## Simulation Output
 
