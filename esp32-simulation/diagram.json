@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "author": "Devenford",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -281.4, "left": -410, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -292.76, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -287.7,
+      "left": 138.6,
+      "attrs": { "temperature": "20.3", "humidity": "45" }
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -444.8,
+      "left": 293.6,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -205.2,
+      "left": 503.4,
+      "attrs": { "color": "magenta", "flip": "1" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd2",
+      "top": 83.2,
+      "left": -42.4,
+      "attrs": { "pins": "i2c", "i2cAddress": "0x26" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -50, "left": 403.2, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -168,
+      "left": -317.35,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "bb1:14b.i", "r1:2", "green", [ "v0" ] ],
+    [ "r1:1", "bb1:14b.h", "green", [ "h9.6", "v9.6" ] ],
+    [ "esp:GND.1", "bb1:bn.1", "black", [ "h-143.85", "v-230.4" ] ],
+    [ "esp:3V3", "bb1:tp.1", "red", [ "h-134.25", "v-297.6" ] ],
+    [ "esp:5V", "bb1:bp.1", "red", [ "h-153.45", "v-297.6" ] ],
+    [ "dht1:VCC", "bb1:tp.25", "red", [ "v19.2", "h-192", "v-115.2" ] ],
+    [ "dht1:GND", "bb1:bn.25", "black", [ "v0" ] ],
+    [ "dht1:SDA", "esp:13", "green", [ "v144", "h-479.9", "v192" ] ],
+    [ "esp:2", "bb1:14b.j", "green", [ "h28.8", "v-201.6", "h-96" ] ],
+    [ "bb1:14b.g", "led1:A", "red", [ "v-9.6", "h211.2", "v28.8", "h556.8" ] ],
+    [ "led1:C", "bb1:bn.24", "black", [ "v0" ] ],
+    [ "servo1:GND", "bb1:bn.23", "black", [ "h-48", "v-86.4" ] ],
+    [ "servo1:V+", "bb1:bp.25", "red", [ "h-57.6", "v-105.5" ] ],
+    [ "servo1:PWM", "esp:18", "green", [ "h-556.8", "v48.2" ] ],
+    [ "lcd2:GND", "bb1:bn.20", "black", [ "h-28.8", "v-9.6" ] ],
+    [ "lcd1:GND", "bb1:bn.19", "black", [ "h-364.8", "v326.4" ] ],
+    [ "lcd2:VCC", "bb1:bp.24", "red", [ "h-38.4", "v-220.7" ] ],
+    [ "lcd1:VCC", "bb1:bp.23", "red", [ "h-345.6", "v297.7" ] ],
+    [ "esp:21", "lcd1:SDA", "yellow", [ "h48", "v-115.2", "h115.2", "v-345.6" ] ],
+    [ "esp:21", "lcd2:SDA", "yellow", [ "h48", "v38.4" ] ],
+    [ "esp:22", "lcd2:SCL", "blue", [ "h57.6", "v96" ] ],
+    [ "esp:22", "lcd1:SCL", "blue", [ "h57.6", "v-67.2", "h124.8", "v-355.2" ] ],
+    [ "r1:1", "bb1:11t.e", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:11b.i", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
