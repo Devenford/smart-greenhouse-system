@@ -76,15 +76,7 @@ WSS (WebSocket Secure) runs on top of TCP and provides a persistent bidirectiona
 
 ## System Architecture
 
-ESP32 Sensors
-      ↓
- MQTT Broker
-      ↓
- Node.js Backend
-      ↓
-   MongoDB
-      ↓
- Dashboard / Mobile App
+ESP32 Sensors → MQTT Broker (HiveMQ) → Node.js Backend → MongoDB → Dashboard / Mobile App
 
 ![Deployment Diagram](screenshots/Deployment-Diagram.png)
 
