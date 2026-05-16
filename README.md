@@ -38,7 +38,7 @@ It performs automated ventilation and allows the user to remotely configure the 
 | 8      | Resistor                 | Passive Component  | Limits current to protect LED |
 | 9      | Power Supply             | Power Source       | Provides required voltage/current to ESP32, actuators, and sensors |
 
-## Circuit Diagram
+### Circuit Diagram
 
 ![Circuit Diagram](screenshots/Circuit-Diagram.png)
 
