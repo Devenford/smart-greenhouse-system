@@ -60,12 +60,14 @@ It performs automated ventilation and allows the user to remotely configure the 
 </p>
 
 ### Communication
-Between the ESP32 and MQTT broker:  (MQTT over TCP with TLS, encrypted)
+1. Between the ESP32 and MQTT broker:  (MQTT over TCP with TLS, encrypted)
+
 ESP32 is connected to WOKWI virtual Wi-Fi router
 ESP32 publishes sensor data (json string) to broker with topic greenhouse/sensor1
 ESP32 is subscribed to topics greenhouse/control/temp_limit and greenhouse/control/humidity_limit
 
-Between the MQTT broker and the Mobile App client: (MQTT over WebSocket with TLS)
+2. Between the MQTT broker and the Mobile App client: (MQTT over WebSocket with TLS)
+
 App is subscribed to topic greenhouse/sensor1 (receives json string)
 App publishes user-defined limits (string) to broker with topics greenhouse/control/temp_limit and greenhouse/control/humidity_limit
 WSS (WebSocket Secure) runs on top of TCP and provides a persistent bidirectional connection, over which mqtt messages are transmitted.
